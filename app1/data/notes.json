@@ -863,42 +863,7 @@
         "email": "mail_96@gmail.com"
       },
       "content": "Content for note 96"
-    },
-    {
-      "id": 97,
-      "title": "Note 97",
-      "author": {
-        "name": "Author 97",
-        "email": "mail_97@gmail.com"
-      },
-      "content": "Content for note 97"
-    },
-    {
-      "id": 98,
-      "title": "Note 98",
-      "author": {
-        "name": "Author 98",
-        "email": "mail_98@gmail.com"
-      },
-      "content": "Content for note 98"
-    },
-    {
-      "id": 99,
-      "title": "Note 99",
-      "author": {
-        "name": "Author 99",
-        "email": "mail_99@gmail.com"
-      },
-      "content": "Content for note 99"
-    },
-    {
-      "id": 100,
-      "title": "Note 100",
-      "author": {
-        "name": "Author 100",
-        "email": "mail_100@gmail.com"
-      },
-      "content": "Content for note 100"
     }
+   
   ]
 }

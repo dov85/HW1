@@ -14,6 +14,7 @@ type Note = {
 
 const NOTES_URL = 'http://localhost:3001/notes';
 const POSTS_PER_PAGE = 10;
+let totalPages=0;
 
 function getPageButtons(activePage: number, totalPages: number): number[] {
   if (totalPages <= 5) {
@@ -46,7 +47,7 @@ function getPageButtons(activePage: number, totalPages: number): number[] {
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
   const [activePage, setActivePage] = useState(1);
-  const [totalNotes, setTotalNotes] = useState(0);
+  
 
   useEffect(() => {
     axios
@@ -59,14 +60,14 @@ function App() {
       .then((response) => {
         setNotes(response.data);
         const totalCount = parseInt(response.headers['x-total-count']);
-        setTotalNotes(totalCount);
+        totalPages = Math.ceil( totalCount / POSTS_PER_PAGE);
       })
       .catch((error) => {
         console.error('Error fetching notes:', error);
       });
   }, [activePage]);
 
-  const totalPages = Math.ceil(totalNotes / POSTS_PER_PAGE);
+  
   const pageButtons = getPageButtons(activePage, totalPages);
 
   return (
@@ -105,7 +106,7 @@ function App() {
             key={page}
             name={`page-${page}`}
             onClick={() => setActivePage(page)}
-            disabled={page === activePage}
+            
             style={{ fontWeight: page === activePage ? 'bold' : 'normal' }}
           >
             {page}
