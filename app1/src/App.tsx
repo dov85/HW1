@@ -14,7 +14,7 @@ type Note = {
 
 const NOTES_URL = 'http://localhost:3001/notes';
 const POSTS_PER_PAGE = 10;
-let totalPages=0;
+let totalPages=1;
 
 function getPageButtons(activePage: number, totalPages: number): number[] {
   if (totalPages <= 5) {
